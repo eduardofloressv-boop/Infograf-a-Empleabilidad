@@ -7,70 +7,92 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
+            /* Fondo decorado con un patrón de iconos de oficina/trabajo */
+            background-color: #e5e7eb;
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), 
+                              linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             text-align: center;
         }
         .container {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             max-width: 450px;
             width: 90%;
+            border: 2px solid #34495e;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Decoración de esquina: Icono de maletín o trabajo */
+        .container::before {
+            content: "💼";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 80px;
+            opacity: 0.1;
+            transform: rotate(15deg);
         }
         h1 {
-            color: #1a2a3a;
-            font-size: 26px;
+            color: #2c3e50;
+            font-size: 28px;
             margin-bottom: 10px;
+            line-height: 1.2;
         }
-        p {
-            color: #666;
-            margin-bottom: 30px;
+        .subtitle {
+            color: #555;
+            margin-bottom: 35px;
             font-size: 16px;
+            font-style: italic;
         }
         .btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             padding: 18px;
             margin: 15px 0;
             text-decoration: none;
             color: white;
-            border-radius: 12px;
+            border-radius: 50px; /* Botones más redondeados y modernos */
             font-weight: bold;
             font-size: 18px;
-            box-sizing: border-box; /* Asegura que el padding no desborde el botón */
+            box-sizing: border-box;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        /* Botón 1: Azul Profesional */
+        /* Botón 1: Azul Ejecutivo */
         .btn-entrevista {
-            background-color: #2c3e50;
-            border: 2px solid #2c3e50;
+            background: linear-gradient(to right, #2c3e50, #4b79a1);
         }
         .btn-entrevista:hover {
-            background-color: #34495e;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(44, 62, 80, 0.4);
         }
-        /* Botón 2: Azul Vibrante */
+        /* Botón 2: Azul Profesional brillante */
         .btn-guia {
-            background-color: #007bff;
-            border: 2px solid #007bff;
+            background: linear-gradient(to right, #0062ff, #00c6ff);
         }
         .btn-guia:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 98, 255, 0.4);
         }
-        .footer-brand {
-            margin-top: 25px;
-            font-size: 14px;
-            color: #999;
-            font-weight: bold;
+        .footer {
+            margin-top: 30px;
+            font-size: 15px;
+            color: #2c3e50;
+            font-weight: 600;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+        .icon {
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -78,13 +100,19 @@
 
     <div class="container">
         <h1>Guía sobre Empleo e Imagen Personal</h1>
-        <p>Selecciona una de las herramientas para comenzar:</p>
+        <p class="subtitle">Herramientas profesionales para tu éxito laboral</p>
         
-        <a href="https://eduardofloressv-boop.github.io/Entrevista-de-trabajo/" class="btn btn-entrevista">Acceder a Entrevista de Trabajo</a>
+        <a href="https://eduardofloressv-boop.github.io/Entrevista-de-trabajo/" class="btn btn-entrevista">
+            <span class="icon">🤝</span> Acceder a Entrevista de Trabajo
+        </a>
         
-        <a href="https://eduardofloressv-boop.github.io/Infografia-Empleabilidad/" class="btn btn-guia">Guía de Empleabilidad</a>
+        <a href="https://eduardofloressv-boop.github.io/Infografia-Empleabilidad/" class="btn btn-guia">
+            <span class="icon">📄</span> Guía de Empleabilidad
+        </a>
 
-        <div class="footer-brand">PsicoRefugioSV</div>
+        <div class="footer">
+            Creado por: Lic. Eduardo Flores
+        </div>
     </div>
 
 </body>
